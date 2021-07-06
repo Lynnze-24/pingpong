@@ -369,6 +369,8 @@ again.addEventListener('click', function(){
   hide.classList.remove('show')
   humanPaddle.score = 0;
     AI.score = 0;
+    circle.x = canvas.width / 2 ;
+      circle.y = canvas.height/2 ;
   again.innerText = "Play again";
   message.parentElement.classList.remove('show');
   message.parentElement.style.backgroundColor = 'rgb(123,34,55)';
@@ -377,6 +379,9 @@ again.addEventListener('click', function(){
 })
 
 quit.addEventListener('click', function(){
+  paused=false;
+  circle.x = canvas.width / 2 ;
+      circle.y = canvas.height/2 ;
   hide.classList.remove('show')
   humanPaddle.score = 0;
     AI.score = 0;
