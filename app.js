@@ -194,7 +194,7 @@ function checkEdge(){
       speed += 0.5;
       
     }
-    if (AI.speed< 6) {
+    if (AI.speed< 6.1) {
      
       AI.speed += 0.4;
     }
