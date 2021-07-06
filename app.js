@@ -365,6 +365,7 @@ pause.addEventListener('click',function(){
 })
 
 again.addEventListener('click', function(){
+  paused = false;
   hide.classList.remove('show')
   humanPaddle.score = 0;
     AI.score = 0;
