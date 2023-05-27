@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html{
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    background-color: black;
+  }
+
+  canvas{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)) ,url(../grassLight.jpg);
+    overflow: hidden;
+  }
+/* https://images.unsplash.com/photo-1523658473-41a7ca4772c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60 */
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    transition: none;
+    overflow: hidden;
+  }
+
+
+  .menu {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)) ,url('https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.5s ease-in-out;
+    color: white;
+  }
+  
+  .menu-container {
+    width: max-content;
+    height: max-content;
+    padding: 10rem;
+   
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  
+  .menu-container h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family:  cursive;
+    margin-bottom: 5rem;
+  }
+  
+  .menu-container div {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-container label {
+    font-size: calc(1rem + 1vw);
+    margin-right: 2rem;
+  }
+  
+  .menu-container input {
+    display: inline-block;
+    width: 10rem;
+    font-size: calc(1rem + 0.5vw);
+    padding: 0.5em 1em;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    margin-right: 1rem;
+    
+  }
+  .menu-container input:focus{
+    background-color: rgb(236, 231, 231);
+  }
+  
+  .menu-container button {
+    font-size: calc(0.8rem + 0.5vw);
+    
+    padding: 0.8rem 1.5rem;
+    align-self: center;
+    
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: #fff;
+/*     
+    transition: color 0.5s ease-in-out,
+                background-color 0.5s ease-in-out ; */
+  }
+  
+  .menu-container button:hover,
+  .menu-container button:focus {
+    
+    background-color: lightgreen;
+  }
+
+  
+
+  .message{
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      padding: 3rem;
+      font-size:  calc(2rem + 0.2vw);;
+      z-index: 4;
+      background-color: rgb(123,34,55);
+      color: white;
+      border-radius: 0.5rem;
+  }
+
+ 
+
+  .message div{
+      display: none;
+      width: 100%;
+      
+      justify-content: space-around;
+      margin-top: 2rem;
+      
+  }
+
+  .message button{
+      font-size: calc(1rem + 0.2vw);
+      padding: 0.3em 1em;
+      border-radius: 0.3em;
+      border: none;
+      outline: none;
+      background-color: #fff;
+  }
+
+  .game i{    
+      position: absolute;
+        top: 2vw;
+        right: 2vw;
+      font-size: calc(2rem + 0.2vw);
+      color: white;
+      z-index: 1;
+      cursor: pointer;
+  }
+
+  button{
+    cursor: pointer;
+  }
+
+  .hide{
+    position: absolute;
+    display: none;
+    top: 2vw;
+    right: 2vw;
+    background: transparent;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+  }
+  
+  .play-game {
+    left: 100%;
+  }
+  
+  
+  .game-start {
+    left: 100%;
+    transition: left 0.5s ease-in-out;
+    transition-delay: 3.2s;
+  }
+  
+  .game-start span {
+    transition: 0.2s ease-in-out;
+  }
+  
+  .game-start span:nth-of-type(1) {
+    color: #4683A0;
+    transition-delay: 0.8s;
+  }
+  
+  .game-start span:nth-of-type(2) {
+    color: #4683A0;
+    transition-delay: 1.8s;
+  }
+  
+  .game-start span:nth-of-type(3) {
+    color: #4683A0;
+    transition-delay: 2.8s;
+  }
+
+  .message .show {
+    display: flex;
+  }
+  .show{
+      display: block;
+  }
+
+
